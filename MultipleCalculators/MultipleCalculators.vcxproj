@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="budgetCalc.h" />
     <ClInclude Include="grossNetCalc.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -122,6 +123,7 @@
     <ResourceCompile Include="MultipleCalculators.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="budgetCalc.cpp" />
     <ClCompile Include="grossNetCalc.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>

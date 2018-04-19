@@ -21,6 +21,9 @@
     <ClInclude Include="grossNetCalc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="budgetCalc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MultipleCalculators.rc">
@@ -33,6 +36,9 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="budgetCalc.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
