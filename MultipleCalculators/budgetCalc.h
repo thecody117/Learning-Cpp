@@ -6,12 +6,12 @@ class budgetFunctions {
 	const int monthDiv = 4;
 	double annualAmmount;
 	double monthlyAmmount;
+public:
+	double sumOfAnnualArray;
 	double annualDivisonRet;
 	double monthlyDivisionRet;
 	double sumOfMonthlyArray;
 	double sumOfWeeklyArray;
-public:
-	double sumOfAnnualArray;
 	void annualDivison(double annualAmmount);
 	void monthlyDivision(double monthlyAmmount);
 };

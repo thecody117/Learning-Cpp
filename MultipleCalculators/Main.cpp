@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <cstring>
+#include <numeric>
+#include <vector>
 #include "grossNetCalc.h"
 #include "budgetCalc.h"
 
@@ -39,32 +41,24 @@ int main() {
 		}
 		else if (choiceForCalc == '3') { //Reverse budget calculator
 			while (running == true) {
-				std::cout << "Welcome!\n This calculator will take a already made budget and break it down back into net and gross pay.\nIt will also allow for hourly pay." << std::endl;
-				std::cout << "Please enter how many annual expenses there are: ";
-				int numberOfExpenses;
-				std::cin >> numberOfExpenses;
-				std::cout << "DEBUG: The number you entered is: " << numberOfExpenses;
-				float* annualMemAmmount;
-				annualMemAmmount = new float[numberOfExpenses];
-				for (int i = 0; i < numberOfExpenses; i++) {
-					std::cout << "\nexpense cost" << i << ": ";
-					std::cin >> *(annualMemAmmount + 1);
+				std::vector<double> annualCosts;
+				std::cout << "Hello, Please enter the amount of annual costs: ";
+				int numberOfCosts;
+				std::cin >> numberOfCosts;
+				int i;
+				for (i = 0; i < numberOfCosts; i++) {
+					std::cout << "\nPlease enter the " << i << " number: ";
+					double costForItem;
+					std::cin >> costForItem;
+					annualCosts.push_back(costForItem);
 				}
-				for (int j = 0; j < numberOfExpenses; ++j) {
-					reverseBudgetCalc.sumOfAnnualArray += annualMemAmmount[j];
+				if(numberOfCosts > 1) {
+					reverseBudgetCalc.sumOfAnnualArray = std::accumulate(annualCosts.begin(), annualCosts.end(), 0.0);
+					std::cout << "The sum of the annual array is: " << reverseBudgetCalc.sumOfAnnualArray << std::endl;
 				}
-				std::cout << reverseBudgetCalc.sumOfAnnualArray;
-				delete [] annualMemAmmount;
-				std::cout << "DEBUG: Type 'x' to exit: ";
-				char exitTest;
-				std::cin >> exitTest;
-				if (exitTest == 'x') {
-					running = false;
-				}
-				else {
-					std::cout << "Sorry, that is not an option. Quitting calc...\n";
-					running = false;
-				}
+				reverseBudgetCalc.annualDivison(reverseBudgetCalc.sumOfAnnualArray);
+				std::cout << reverseBudgetCalc.annualDivisonRet << std::endl;
+				running = false;
 			}
 		} 
 		else if (choiceForCalc == 'x') {
