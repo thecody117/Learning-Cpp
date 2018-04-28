@@ -57,8 +57,35 @@ int main() {
 					std::cout << "The sum of the annual array is: " << reverseBudgetCalc.sumOfAnnualArray << std::endl;
 				}
 				reverseBudgetCalc.annualDivison(reverseBudgetCalc.sumOfAnnualArray);
-				std::cout << reverseBudgetCalc.annualDivisonRet << std::endl;
-				running = false;
+				std::cout << "Please enter the amount of monthly costs: ";
+				std::cin >> numberOfCosts;
+				std::vector<double> monthlyCosts;
+				for (i = 0; i < numberOfCosts; i++) {
+					std::cout << "\nPlease enter the " << i << " number: ";
+					double costForItem;
+					std::cin >> costForItem;
+					monthlyCosts.push_back(costForItem);
+				}
+				if (numberOfCosts > 1) {
+					reverseBudgetCalc.sumOfMonthlyArray = std::accumulate(monthlyCosts.begin(), monthlyCosts.end(), 0.0);
+					std::cout << "The sum of the monthly array is: " << reverseBudgetCalc.sumOfMonthlyArray << std::endl;
+				}
+				reverseBudgetCalc.monthlyDivision(reverseBudgetCalc.sumOfMonthlyArray);
+				std::cout << "Finally, please enter the weekly costs: ";
+				std::cin >> numberOfCosts;
+				std::vector<double> weeklyCosts;
+				for (i = 0; i < numberOfCosts; i++) {
+					std::cout << "\nPlease enter the " << i << " number: ";
+					double costForItem;
+					std::cin >> costForItem;
+					weeklyCosts.push_back(costForItem);
+				}
+				if (numberOfCosts > 1) {
+					reverseBudgetCalc.sumOfWeeklyArray = std::accumulate(weeklyCosts.begin(), weeklyCosts.end(), 0.0);
+					std::cout << "The sum of the weekly array is: " << reverseBudgetCalc.sumOfWeeklyArray << std::endl;
+				}
+				double allCostsAdded = reverseBudgetCalc.sumOfWeeklyArray + reverseBudgetCalc.sumOfMonthlyArray + reverseBudgetCalc.sumOfAnnualArray;
+				std::cout << allCostsAdded << std::endl;
 			}
 		} 
 		else if (choiceForCalc == 'x') {

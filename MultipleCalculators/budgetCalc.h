@@ -10,6 +10,7 @@ public:
 	double sumOfAnnualArray;
 	double annualDivisonRet;
 	double monthlyDivisionRet;
+	double weeklyDivisionRet;
 	double sumOfMonthlyArray;
 	double sumOfWeeklyArray;
 	void annualDivison(double annualAmmount);

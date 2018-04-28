@@ -4,6 +4,6 @@
 void budgetFunctions::annualDivison(double annualAmmount) {
 	annualDivisonRet = annualAmmount / yearDiv;
 }
-void budgetFunctions::monthlyDivision(double monthlyAmmount){
+void budgetFunctions::monthlyDivision(double monthlyAmmount) {
 	monthlyDivisionRet = monthlyAmmount / monthDiv;
 }
